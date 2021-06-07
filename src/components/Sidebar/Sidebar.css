@@ -1,0 +1,97 @@
+.SidebarWrapper {
+  width: 16%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 1000;
+  box-shadow: 0 0.125rem 9.375rem rgb(90 97 105 / 10%),
+    0 0.25rem 0.5rem rgb(90 97 105 / 12%),
+    0 0.9375rem 1.375rem rgb(90 97 105 / 10%),
+    0 0.4375rem 2.1875rem rgb(165 182 201 / 10%);
+  will-change: transform;
+  transition: -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+.SidebarHeader {
+  height: 8vh;
+  padding: 0px 15px 0px 15px;
+  border-bottom: 1px solid #e1e5eb !important;
+  display: flex;
+  align-items: center;
+  color: #3d5170;
+}
+
+.SidebarHeader .sidebarCloseIcon {
+  display: none;
+}
+.SidebarHeaderTitle {
+  width: 90%;
+}
+.SidebarHeaderTitle h5 {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.SidebarMenu {
+  margin: 0px;
+  padding: 0px;
+}
+
+.SidebarMenu:hover li {
+  cursor: pointer;
+}
+
+.SidebarMenu li {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  list-style-type: none;
+  height: 50px;
+  color: #3d5170;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0px 20px 0px 20px;
+}
+
+.SidebarMenu li:active {
+  border-left: solid 3px #007bff;
+}
+.SidebarMenu li a {
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #3d5170;
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .SidebarHeader .sidebarCloseIcon {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .SidebarWrapper {
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-out;
+    display: none;
+  }
+
+  .SidebarWrapper.open {
+    display: block;
+    z-index: 1000;
+    flex: 1;
+    min-width: 70vw;
+    transform: translateX(0);
+    transition: transform 0.5s ease-out;
+  }
+}
+/* .SidebarWrapper.open {
+ 
+  } */
